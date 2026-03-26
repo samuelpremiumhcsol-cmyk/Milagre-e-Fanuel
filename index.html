@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fanuel & Milagre</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+body{font-family:'Montserrat',sans-serif;background:#141414;color:#f5f5f5}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px}
+
+.title{font-family:'Playfair Display',serif;font-size:2.5rem}
+.gold{color:#e6b980}
+
+.btn{margin-top:20px;padding:14px 30px;border:none;border-radius:30px;background:#8b0000;color:#fff;cursor:pointer}
+
+.hero{background:url('capa.jpg') center/cover no-repeat}
+
+.card{background:#1a1a1a;border-radius:20px;padding:25px;margin:15px;max-width:500px;border:1px solid rgba(255,255,255,0.1)}
+
+.timeline{background:#8c2a05;border-radius:20px;padding:40px;width:90%;max-width:500px}
+
+.countdown{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
+.box{background:#222;padding:20px;border-radius:15px;font-size:1.2rem}
+
+.dress{border:2px dashed #e6b980;border-radius:20px;padding:30px}
+
+.input{width:100%;padding:12px;margin:10px 0;background:#222;border:none;color:#fff;border-radius:10px}
+
+.message-card{background:#1a1a1a;padding:15px;border-radius:15px;margin:10px;width:90%;max-width:500px;text-align:left;border:1px solid rgba(230,185,128,0.2)}
+
+.whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%}
+.music{position:fixed;bottom:20px;left:20px;background:#8b0000;padding:15px;border-radius:50%}
+</style>
+</head>
+
+<body>
+
+<section class="hero">
+<h3 class="gold">CONVITE</h3>
+<h1 class="title">F & M</h1>
+<p>23.05.2026</p>
+<button class="btn" onclick="scrollDown()">Revelar Convite</button>
+</section>
+
+<section>
+<h2 class="gold">O CASAMENTO DE</h2>
+<h1 class="title">Fanuel & Milagre</h1>
+<img src="foto1.jpg" style="width:200px;border-radius:50%;border:4px solid #d4a373;margin-top:20px">
+</section>
+
+<section>
+<h2 class="gold">Passagem Bíblica</h2>
+<p>"E, sobre tudo isto, revesti-vos de amor, que é o vínculo da perfeição."<br><span class="gold">Colossenses 3:14</span></p>
+</section>
+
+<section>
+<h2 class="gold">Com a bênção de Deus e seus pais</h2>
+<div class="card"><h3 class="gold">Milagre</h3><p>Filha de Maurício Comé & Celestina Maúnze</p></div>
+<div class="card"><h3 class="gold">Fanuel</h3><p>Filho de Lucas Marrengue & Filomena Vilanculo</p></div>
+</section>
+
+<section>
+<h2 class="gold">Contagem Regressiva</h2>
+<div class="countdown">
+<div class="box" id="d">0d</div>
+<div class="box" id="h">0h</div>
+<div class="box" id="m">0m</div>
+<div class="box" id="s">0s</div>
+</div>
+</section>
+
+<section>
+<div class="timeline">
+<h2>Agenda</h2>
+<p>Sábado, 23 de Maio de 2026</p>
+<p><strong>11:00</strong> - Cerimónia Civil - Stop, Restaurante & Bar</p>
+<p><strong>13:00</strong> - Cerimónia Religiosa - Igreja universal do Reino de Deus-Maxixe</p>
+<p><strong>15:45</strong> - Copo d'água - Stop, Restaurante & Bar</p>
+<p>Stop Restaurante</p>
+<a href="https://www.google.com/maps/search/?api=1&query=Stop+Restaurante" target="_blank">
+<button class="btn">Direções</button>
+</a>
+</div>
+</section>
+
+<section>
+<div class="dress">
+<h2 class="gold">Dress Code</h2>
+<p>Traje Formal</p>
+<p>Branco reservado apenas à noiva</p>
+</div>
+</section>
+
+<section>
+<h2 class="gold">Confirmação de Presença</h2>
+<p>Confirme até 06 de Maio de 2026</p>
+<input id="nome" class="input" placeholder="Nome completo">
+<input id="telefone" class="input" placeholder="Telefone">
+<textarea id="mensagem" class="input" placeholder="Mensagem"></textarea>
+<button class="btn" onclick="enviarWhatsApp()">Confirmar via WhatsApp</button>
+</section>
+
+<section>
+<h2 class="gold">Lista de Presentes</h2>
+<div class="card">🎁 Categoria Brindes</div>
+<div class="card">💰 Contribuição Monetária</div>
+<p style="margin-top:20px;font-style:italic">A vossa presença é o maior presente ❤️</p>
+</section>
+
+<section>
+<h2 class="gold">Galeria de Fotos</h2>
+<div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;width:100%;max-width:900px;margin-top:20px">
+<img src="foto1.jpg" style="width:100%;border-radius:10px">
+<img src="foto2.jpg" style="width:100%;border-radius:10px">
+<img src="foto3.jpg" style="width:100%;border-radius:10px">
+<img src="foto4.jpg" style="width:100%;border-radius:10px">
+<img src="foto5.jpg" style="width:100%;border-radius:10px">
+<img src="foto6.jpg" style="width:100%;border-radius:10px">
+<img src="foto7.jpg" style="width:100%;border-radius:10px">
+<img src="foto8.jpg" style="width:100%;border-radius:10px">
+<img src="foto9.jpg" style="width:100%;border-radius:10px">
+<img src="foto10.jpg" style="width:100%;border-radius:10px">
+<img src="foto11.jpg" style="width:100%;border-radius:10px">
+<img src="foto12.jpg" style="width:100%;border-radius:10px">
+<img src="foto13.jpg" style="width:100%;border-radius:10px">
+<img src="foto14.jpg" style="width:100%;border-radius:10px">
+<img src="foto15.jpg" style="width:100%;border-radius:10px">
+<img src="foto16.jpg" style="width:100%;border-radius:10px">
+</div>
+</section>
+
+<section>
+<h2 class="gold">Mensagens dos Convidados</h2>
+<p>Deixe sua mensagem para os noivos 💛</p>
+
+<input id="nomeMsg" class="input" placeholder="Seu nome">
+<textarea id="textoMsg" class="input" placeholder="Escreva sua mensagem..."></textarea>
+<button class="btn" onclick="adicionarMensagem()">Enviar Mensagem</button>
+
+<div id="listaMensagens">
+<div class="message-card"><strong>Carlos</strong><br>Felicidades eternas</div>
+<div class="message-card"><strong>Heluise</strong><br>Muitas felicidades</div>
+</div>
+</section>
+
+<audio id="audio" loop><source src="musica.mp3"></audio>
+<div class="music" onclick="toggleMusic()">🎵</div>
+<a class="whatsapp" href="https://wa.me/258878000600">💬</a>
+
+<script>
+function scrollDown(){window.scrollTo({top:window.innerHeight,behavior:'smooth'})}
+
+const d=document.getElementById('d');
+const h=document.getElementById('h');
+const m=document.getElementById('m');
+const s=document.getElementById('s');
+
+const date=new Date('May 23, 2026 00:00:00').getTime();
+setInterval(()=>{
+let now=new Date().getTime();
+let diff=date-now;
+
+d.innerText=Math.floor(diff/(1000*60*60*24))+'d';
+h.innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60))+'h';
+m.innerText=Math.floor((diff%(1000*60*60))/(1000*60))+'m';
+s.innerText=Math.floor((diff%(1000*60))/1000)+'s';
+},1000);
+
+function enviarWhatsApp(){
+const nome=document.getElementById('nome').value;
+const telefone=document.getElementById('telefone').value;
+const mensagem=document.getElementById('mensagem').value;
+
+const texto=`Olá, sou ${nome}. Confirmo presença no casamento. Tel: ${telefone}. ${mensagem}`;
+
+window.open(`https://wa.me/258878000600?text=${encodeURIComponent(texto)}`,'_blank');
+}
+
+const audio=document.getElementById('audio');
+document.body.addEventListener('click',()=>audio.play(),{once:true});
+function toggleMusic(){audio.paused?audio.play():audio.pause()}
+
+function adicionarMensagem(){
+const nome=document.getElementById('nomeMsg').value;
+const texto=document.getElementById('textoMsg').value;
+
+if(nome==='' || texto===''){
+alert('Preencha todos os campos');
+return;
+}
+
+const div=document.createElement('div');
+div.className='message-card';
+div.innerHTML=`<strong>${nome}</strong><br>${texto}`;
+
+document.getElementById('listaMensagens').appendChild(div);
+
+document.getElementById('nomeMsg').value='';
+document.getElementById('textoMsg').value='';
+}
+</script>
+
+</body>
+</html>
