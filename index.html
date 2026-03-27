@@ -8,28 +8,36 @@
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box}
-body{font-family:'Montserrat',sans-serif;background:#141414;color:#f5f5f5}
-section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px}
+body{font-family:'Montserrat',sans-serif;background:#0d0d0d;color:#fff;overflow-x:hidden}
+section{min-height:100vh;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;padding:40px 20px;opacity:0;transform:translateY(40px);transition:1s}
+section.show{opacity:1;transform:translateY(0)}
 
 .title{font-family:'Playfair Display',serif;font-size:2.5rem}
-.gold{color:#e6b980}
+.gold{color:#d4a373}
 
-.btn{margin-top:20px;padding:14px 30px;border:none;border-radius:30px;background:#8b0000;color:#fff;cursor:pointer}
+.btn{margin-top:20px;padding:14px 30px;border:none;border-radius:30px;background:#8b0000;color:#fff;cursor:pointer;transition:0.3s}
+.btn:hover{transform:scale(1.05)}
 
 .hero{background:url('capa.jpg') center/cover no-repeat}
 
-.card{background:#1a1a1a;border-radius:20px;padding:25px;margin:15px;max-width:500px;border:1px solid rgba(255,255,255,0.1)}
+.card{background:#111;border-radius:20px;padding:25px;margin:15px;max-width:500px;border:1px solid rgba(255,255,255,0.1)}
 
-.timeline{background:#8c2a05;border-radius:20px;padding:40px;width:90%;max-width:500px}
+.timeline{background:#7a1e00;border-radius:20px;padding:40px;width:90%;max-width:500px}
 
 .countdown{display:grid;grid-template-columns:1fr 1fr;gap:15px;margin-top:20px}
-.box{background:#222;padding:20px;border-radius:15px;font-size:1.2rem}
+.box{background:#1a1a1a;padding:20px;border-radius:15px;font-size:1.2rem}
 
-.dress{border:2px dashed #e6b980;border-radius:20px;padding:30px}
+.dress{border:2px dashed #d4a373;border-radius:20px;padding:30px}
 
 .input{width:100%;padding:12px;margin:10px 0;background:#222;border:none;color:#fff;border-radius:10px}
 
-.message-card{background:#1a1a1a;padding:15px;border-radius:15px;margin:10px;width:90%;max-width:500px;text-align:left;border:1px solid rgba(230,185,128,0.2)}
+.message-card{background:#111;padding:15px;border-radius:15px;margin:10px;width:90%;max-width:500px;text-align:left}
+
+.hidden{display:none}
+
+/* floating hearts */
+.heart{position:fixed;color:#d4a373;font-size:20px;animation:float 6s linear infinite}
+@keyframes float{0%{transform:translateY(100vh)}100%{transform:translateY(-10vh)}}
 
 .whatsapp{position:fixed;bottom:20px;right:20px;background:#25D366;padding:15px;border-radius:50%}
 .music{position:fixed;bottom:20px;left:20px;background:#8b0000;padding:15px;border-radius:50%}
@@ -38,7 +46,7 @@ section{min-height:100vh;display:flex;flex-direction:column;justify-content:cent
 
 <body>
 
-<section class="hero">
+<section class="hero show">
 <h3 class="gold">CONVITE</h3>
 <h1 class="title">F & M</h1>
 <p>23.05.2026</p>
@@ -96,54 +104,42 @@ section{min-height:100vh;display:flex;flex-direction:column;justify-content:cent
 
 <section>
 <h2 class="gold">Confirmação de Presença</h2>
-<p>Confirme até 06 de Maio de 2026</p>
 <input id="nome" class="input" placeholder="Nome completo">
 <input id="telefone" class="input" placeholder="Telefone">
 <textarea id="mensagem" class="input" placeholder="Mensagem"></textarea>
+<select id="presenca" class="input">
+<option value="">Vai comparecer?</option>
+<option>Sim, estarei presente</option>
+<option>Não poderei comparecer</option>
+</select>
 <button class="btn" onclick="enviarWhatsApp()">Confirmar via WhatsApp</button>
 </section>
 
 <section>
 <h2 class="gold">Lista de Presentes</h2>
-<div class="card">🎁 Categoria Brindes</div>
-<div class="card">💰 Contribuição Monetária</div>
-<p style="margin-top:20px;font-style:italic">A vossa presença é o maior presente ❤️</p>
+<button class="btn" onclick="toggle('brindes')">🎁 Ver Brindes</button>
+<div id="brindes" class="hidden">
+<p>Fogão de 6 bocas, Liquidificador, Máquina de sumo, Batedeira, Torradeira</p>
+</div>
+<button class="btn" onclick="toggle('monetario')">💰 Contribuição</button>
+<div id="monetario" class="hidden">
+<p>Standard Bank Conta: 2044621361001</p>
+<p>Standard Bank NIB: 000302040462136100152</p>
+<p>Titular: Fanuel Lucas Sainda Marrengue</p>
+</div>
 </section>
 
 <section>
-<h2 class="gold">Galeria de Fotos</h2>
+<h2 class="gold">Nossos Momentos</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;width:100%;max-width:900px;margin-top:20px">
-<img src="foto1.jpg" style="width:100%;border-radius:10px">
-<img src="foto2.jpg" style="width:100%;border-radius:10px">
-<img src="foto3.jpg" style="width:100%;border-radius:10px">
-<img src="foto4.jpg" style="width:100%;border-radius:10px">
-<img src="foto5.jpg" style="width:100%;border-radius:10px">
-<img src="foto6.jpg" style="width:100%;border-radius:10px">
-<img src="foto7.jpg" style="width:100%;border-radius:10px">
-<img src="foto8.jpg" style="width:100%;border-radius:10px">
-<img src="foto9.jpg" style="width:100%;border-radius:10px">
-<img src="foto10.jpg" style="width:100%;border-radius:10px">
-<img src="foto11.jpg" style="width:100%;border-radius:10px">
-<img src="foto12.jpg" style="width:100%;border-radius:10px">
-<img src="foto13.jpg" style="width:100%;border-radius:10px">
-<img src="foto14.jpg" style="width:100%;border-radius:10px">
-<img src="foto15.jpg" style="width:100%;border-radius:10px">
-<img src="foto16.jpg" style="width:100%;border-radius:10px">
+<img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg"><img src="foto5.jpg"><img src="foto6.jpg"><img src="foto7.jpg"><img src="foto8.jpg"><img src="foto9.jpg"><img src="foto10.jpg"><img src="foto11.jpg"><img src="foto12.jpg"><img src="foto13.jpg"><img src="foto14.jpg"><img src="foto15.jpg"><img src="foto16.jpg">
 </div>
 </section>
 
 <section>
 <h2 class="gold">Mensagens dos Convidados</h2>
-<p>Deixe sua mensagem para os noivos 💛</p>
-
-<input id="nomeMsg" class="input" placeholder="Seu nome">
-<textarea id="textoMsg" class="input" placeholder="Escreva sua mensagem..."></textarea>
-<button class="btn" onclick="adicionarMensagem()">Enviar Mensagem</button>
-
-<div id="listaMensagens">
 <div class="message-card"><strong>Carlos</strong><br>Felicidades eternas</div>
-<div class="message-card"><strong>Heluise</strong><br>Muitas felicidades</div>
-</div>
+<div class="message-card"><strong>Heluize</strong><br>Muitas felicidades</div>
 </section>
 
 <audio id="audio" loop><source src="musica.mp3"></audio>
@@ -153,16 +149,40 @@ section{min-height:100vh;display:flex;flex-direction:column;justify-content:cent
 <script>
 function scrollDown(){window.scrollTo({top:window.innerHeight,behavior:'smooth'})}
 
+// fade on scroll
+const sections=document.querySelectorAll('section');
+window.addEventListener('scroll',()=>{
+sections.forEach(sec=>{
+const top=sec.getBoundingClientRect().top;
+if(top<window.innerHeight-100){sec.classList.add('show')}
+});
+});
+
+// hearts
+setInterval(()=>{
+const heart=document.createElement('div');
+heart.className='heart';
+heart.innerText='❤';
+heart.style.left=Math.random()*100+'%';
+document.body.appendChild(heart);
+setTimeout(()=>heart.remove(),6000);
+},500);
+
+// toggle lists
+function toggle(id){
+const el=document.getElementById(id);
+el.classList.toggle('hidden');
+}
+
+// countdown
 const d=document.getElementById('d');
 const h=document.getElementById('h');
 const m=document.getElementById('m');
 const s=document.getElementById('s');
-
-const date=new Date('May 23, 2026 00:00:00').getTime();
+const date=new Date('May 23, 2026').getTime();
 setInterval(()=>{
 let now=new Date().getTime();
 let diff=date-now;
-
 d.innerText=Math.floor(diff/(1000*60*60*24))+'d';
 h.innerText=Math.floor((diff%(1000*60*60*24))/(1000*60*60))+'h';
 m.innerText=Math.floor((diff%(1000*60*60))/(1000*60))+'m';
@@ -173,34 +193,15 @@ function enviarWhatsApp(){
 const nome=document.getElementById('nome').value;
 const telefone=document.getElementById('telefone').value;
 const mensagem=document.getElementById('mensagem').value;
-
-const texto=`Olá, sou ${nome}. Confirmo presença no casamento. Tel: ${telefone}. ${mensagem}`;
-
+const presenca=document.getElementById('presenca').value;
+const texto=`Olá, sou ${nome}. ${presenca}. Tel: ${telefone}. ${mensagem}`;
 window.open(`https://wa.me/258878000600?text=${encodeURIComponent(texto)}`,'_blank');
 }
 
+// music
 const audio=document.getElementById('audio');
 document.body.addEventListener('click',()=>audio.play(),{once:true});
 function toggleMusic(){audio.paused?audio.play():audio.pause()}
-
-function adicionarMensagem(){
-const nome=document.getElementById('nomeMsg').value;
-const texto=document.getElementById('textoMsg').value;
-
-if(nome==='' || texto===''){
-alert('Preencha todos os campos');
-return;
-}
-
-const div=document.createElement('div');
-div.className='message-card';
-div.innerHTML=`<strong>${nome}</strong><br>${texto}`;
-
-document.getElementById('listaMensagens').appendChild(div);
-
-document.getElementById('nomeMsg').value='';
-document.getElementById('textoMsg').value='';
-}
 </script>
 
 </body>
