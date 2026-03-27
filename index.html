@@ -53,6 +53,10 @@ section.show{opacity:1;transform:translateY(0)}
 <button class="btn" onclick="scrollDown()">Revelar Convite</button>
 </section>
 
+  <audio id="audio" loop autoplay>
+<source src="musica.mp3">
+</audio>
+  
 <section>
 <h2 class="gold">O CASAMENTO DE</h2>
 <h1 class="title">Fanuel & Milagre</h1>
@@ -221,7 +225,10 @@ window.open(`https://wa.me/258878000600?text=${encodeURIComponent(texto)}`,'_bla
 
 // music
 const audio=document.getElementById('audio');
+audio.play().catch(()=>{
 document.body.addEventListener('click',()=>audio.play(),{once:true});
+});
+
 function toggleMusic(){audio.paused?audio.play():audio.pause()}
 </script>
 
