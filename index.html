@@ -132,16 +132,38 @@ section.show{opacity:1;transform:translateY(0)}
 <section>
 <h2 class="gold">Nossos Momentos</h2>
 <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(120px,1fr));gap:10px;width:100%;max-width:900px;margin-top:20px">
-<img src="foto1.jpg"><img src="foto2.jpg"><img src="foto3.jpg"><img src="foto4.jpg"><img src="foto5.jpg"><img src="foto6.jpg"><img src="foto7.jpg"><img src="foto8.jpg"><img src="foto9.jpg"><img src="foto10.jpg"><img src="foto11.jpg"><img src="foto12.jpg"><img src="foto13.jpg"><img src="foto14.jpg"><img src="foto15.jpg"><img src="foto16.jpg">
+<img src="foto1.jpg" style="width:100%;border-radius:10px">
+<img src="foto2.jpg" style="width:100%;border-radius:10px">
+<img src="foto3.jpg" style="width:100%;border-radius:10px">
+<img src="foto4.jpg" style="width:100%;border-radius:10px">
+<img src="foto5.jpg" style="width:100%;border-radius:10px">
+<img src="foto6.jpg" style="width:100%;border-radius:10px">
+<img src="foto7.jpg" style="width:100%;border-radius:10px">
+<img src="foto8.jpg" style="width:100%;border-radius:10px">
+<img src="foto9.jpg" style="width:100%;border-radius:10px">
+<img src="foto10.jpg" style="width:100%;border-radius:10px">
+<img src="foto11.jpg" style="width:100%;border-radius:10px">
+<img src="foto12.jpg" style="width:100%;border-radius:10px">
+<img src="foto13.jpg" style="width:100%;border-radius:10px">
+<img src="foto14.jpg" style="width:100%;border-radius:10px">
+<img src="foto15.jpg" style="width:100%;border-radius:10px">
+<img src="foto16.jpg" style="width:100%;border-radius:10px">
 </div>
 </section>
 
 <section>
 <h2 class="gold">Mensagens dos Convidados</h2>
+<p>Deixe sua mensagem para os noivos 💛</p>
+
+<input id="nomeMsg" class="input" placeholder="Seu nome">
+<textarea id="textoMsg" class="input" placeholder="Escreva sua mensagem..."></textarea>
+<button class="btn" onclick="adicionarMensagem()">Enviar Mensagem</button>
+
+<div id="listaMensagens">
 <div class="message-card"><strong>Carlos</strong><br>Felicidades eternas</div>
 <div class="message-card"><strong>Heluize</strong><br>Muitas felicidades</div>
+</div>
 </section>
-
 <audio id="audio" loop><source src="musica.mp3"></audio>
 <div class="music" onclick="toggleMusic()">🎵</div>
 <a class="whatsapp" href="https://wa.me/258878000600">💬</a>
